@@ -9,7 +9,7 @@
     export default {
         data(){
             return{
-                email: 'noorafshan@gmail'
+                email: 'noorafshan@gmail.com'
             }
         }
     }

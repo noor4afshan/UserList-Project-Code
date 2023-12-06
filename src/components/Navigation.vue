@@ -30,4 +30,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped>
+.navbar-brand {
+    color: brown;
+    font-weight: bold;
+}
+</style>

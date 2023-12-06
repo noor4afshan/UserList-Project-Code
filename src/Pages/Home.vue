@@ -6,28 +6,23 @@
                     Find your skill related job here
                 </h3>
                 <p class="sub-tittle">
-                    Apply for any vacancies with proper guidance
+                    Apply for any vacancies here
                 </p>
             </div>
         </section>
 
-        <NewVacancy v-if="isAdmin" @save="handleSubmt"/>
+        <NewVacancy v-if="isAdmin" @save="handleSubmt" />
 
-        <Vacancy 
-        v-for="vacancy in vacancies" 
-        :key="vacancy.id" 
-        :isAdmin ="isAdmin"
-        :vacancy="vacancy" 
-        @delete="handleDelete"/>
+        <Vacancy v-for="vacancy in vacancies" :key="vacancy.id" :isAdmin="isAdmin" :vacancy="vacancy"
+            @delete="handleDelete" />
     </div>
-    
 </template>
 
 <script>
 import NewVacancy from '../components/NewVacancy.vue';
 import Vacancy from '../components/Vacancy.vue';
 import { vacancies } from '../../../data';
-import { pushScopeId } from 'vue';
+
 
 export default {
     components: {
@@ -41,18 +36,16 @@ export default {
         }
     },
     methods: {
-        handleSubmt(fromdata){
-            console.log ('FormData',fromdata);
-            this.vacancies.unshift (fromdata);
-
-            
+        handleSubmt(fromdata) {
+            console.log('FormData', fromdata);
+            this.vacancies.unshift(fromdata);
         },
-        handleDelete(vacancyid){
-            this.vacancies = this.vacancies.filter(vacancy=>vacancy.id !==vacancyid)
+
+        handleDelete(vacancyid) {
+            this.vacancies = this.vacancies.filter(vacancy => vacancy.id !== vacancyid)
         }
     }
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
