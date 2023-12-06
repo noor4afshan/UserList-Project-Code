@@ -3,7 +3,6 @@
         <div class="container p-3 shadow-lg mb-5 bg-tertiary rounded">
             <h5>Post a Vacancy</h5>
             <form @submit.prevent="handleSubmit">
-
                 <input v-model="form.tittle" type="text" class="form-control mt-3" placeholder="Job Tittle"
                     aria-label="Username" aria-describedby="basic-addon1">
                 <input v-model="form.company" type="text" class="form-control" placeholder="Company Name"
@@ -27,16 +26,13 @@ export default {
                 company: '',
                 city: '',
                 description: '',
-
-
-
             }
         }
     },
-    methods:{
-        handleSubmit(){
-            this.$emit('save',{...this.form, id: new Date().getTime().toString()})
-            for(let key in this.form){
+    methods: {
+        handleSubmit() {
+            this.$emit('save', { ...this.form, id: new Date().getTime().toString() })
+            for (let key in this.form) {
                 this.form[key] = '';
             }
 
@@ -48,4 +44,5 @@ export default {
 <style scoped>
 input {
     margin-bottom: 20px;
-}</style>
+}
+</style>
